@@ -1,0 +1,723 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  padding-top: 60px;
+}
+
+
+/*  ===== Card Personnel===== */
+.card {
+  width: 915px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile img {
+  width: 90px;
+  height: 94px;
+  border-radius: 45px;
+}
+
+.name h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.name p {
+  margin: 3px 0 0 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.show-btn {
+  background: none;
+  border: none;
+  color: #f0b236;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.show-btn:hover {
+  color: #5a5a59;
+}
+
+.contacts {
+  margin-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.contacts.show {
+  opacity: 1;
+  max-height: 400px;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #bdbbbb;
+  font-size: 0.95rem;
+}
+
+.contact-item.right {
+  margin-right: 120px;
+  justify-content: flex-end; 
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  border-top: 1px solid rgba(160, 157, 157, 0.1);
+  padding-top: 15px;
+}
+
+/*  ===== Card Second===== */
+.container {
+  width: 795px;
+  margin: 30px auto 60px auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  padding: 80px;
+  color: #fff;
+}
+
+/* 🔹 جعل عنوان "About Me" أكبر وأوضح */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 1.7rem; /* 🔸 تكبير حجم الخط */
+  font-weight: 550;
+  color: #f1f1ee;
+  letter-spacing: 2px;
+}
+section {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+/* 🔸 Navbar */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 25px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.navbar li:hover,
+.navbar .active {
+  color: #f5c542;
+}
+/*  ===== About Section ===== */
+.about-card {
+  display: grid;
+  grid-template-columns: repeat(2, 390px);
+  gap: 25px;
+  margin-top: 40px;
+  justify-content: center;
+}
+#about .side-content p:not(.about-card p) {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: #f8f5f5;
+  text-align: justify;
+}
+
+#about p {
+font-family: "Times New Roman", Times, serif;
+font-size: 13px;
+letter-spacing: 0.2px;
+line-height: 1.6;
+color: #ccc;
+}
+
+
+.about-card .card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 15px;
+  max-width: 360px;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+.about-card .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #f5c542;
+}
+.about-card .card-img {
+  width: 45px; /* الحجم الجديد */
+  height: 45px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+} 
+.about-card .card h4 {
+  color: #f3f3f3;
+  margin: 0 0 5px 0;
+  font-size: 1.03rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 600;
+}
+
+.about-card .card p {
+  color: #ccc;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.skills {
+  display: flex;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.skills img {
+  width: 140px;
+  height: 160px;
+  border-radius: 15px;
+  background-color: #1b1b1b;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.skills img:hover {
+  transform: scale(1.2);
+}
+
+/* ====== Resume Section ====== */
+.resume {
+      background-color: #0f0f0f;
+      padding: 36px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      margin-top: 8px;
+    }
+
+.resume-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+.resume-section-block {
+      position: relative;
+      padding-left: 90px; 
+    }
+
+.resume-icon-box {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background: #121212;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(246,201,14,0.06);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+.resume-icon-box img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+.resume-timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 0;
+  border-left: none; 
+}
+
+.resume-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 12px 18px;
+  transition: background 0.3s ease;
+}
+
+.resume-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.resume-item .dot {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin-top: 6px;
+  background: #f6990e;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(246, 201, 14, 0.5);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.resume-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px 0;
+}
+
+.resume-content p {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  margin: 0 0 4px 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.resume-content .date {
+  color: #f6990e;
+  font-size: 0.88rem;
+  margin-top: 3px;
+}
+
+.resume-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  bottom: -10px;
+  width: 2px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+      .resume { padding: 22px; }
+      .resume-section-block { padding-left: 80px; }
+      .resume-icon-box { width:52px; height:52px; }
+      .resume-item .dot { left: -40px; }
+    }
+
+
+/* ====== Portfolio Section ====== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 55px;
+  justify-items: center;
+  margin-top: 80px;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background: #111;
+  overflow: hidden; /* 🔹 حتى لا تخرج الصورة عن الحواف */
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  background: #181818;
+  box-shadow: 0 10px 25px rgba(245, 197, 66, 0.15);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 50%; /* 🔹 الصورة تأخذ نصف البطاقة */
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.portfolio-card-content {
+  flex: 1; /* 🔹 النصوص تأخذ المساحة المتبقية */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 15px;
+}
+
+.portfolio-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #fce8b1;
+}
+
+.portfolio-card p {
+  font-size: 0.85rem;
+  color: #ccc;
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* 🔹 استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+  .portfolio-card {
+    max-width: 200px;
+  }
+}
+
+/*  ===== contact ===== */
+.contact-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #121212;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-container iframe {
+  width: 95%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.form-container {
+  width: 90%;
+  max-width: 700px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus {
+  border-color: #ffb100;
+}
+#subject {
+  margin-bottom: 15px; /* تضيف فراغ قبل الرسالة */
+}
+.send-btn {
+  margin-top: 15px;
+  background: #ffb100;
+  color: #000;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.send-btn:hover {
+  background: #ffaa00;
+}
+
+
+/* 🔹 تحسين تجاوب الهاتف (أقل من 768px) */
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 20px; /* 🔸 تقليل المسافة العلوية */
+  }
+
+  /* ===== البطاقة الشخصية ===== */
+  .card {
+    width: 95%;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .profile img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .name h1 {
+    font-size: 1.2rem;
+  }
+
+  .name p {
+    font-size: 0.85rem;
+  }
+
+  .contacts {
+    padding-top: 10px;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* ===== About ===== */
+  .container {
+    width: 94%;
+    padding: 25px 20px;
+  }
+
+  .about-card {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .about-card .card {
+    flex-direction: row;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .skills {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .skills img {
+    width: 90px;
+    height: 100px;
+  }
+
+  /* ===== Resume ===== */
+  .resume {
+    padding: 20px;
+  }
+
+  .resume-title {
+    font-size: 1.4rem;
+  }
+
+  .resume-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .resume-content p {
+    font-size: 0.8rem;
+  }
+
+  /* ===== Portfolio ===== */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+  }
+
+  .portfolio-card {
+    max-width: 170px;
+    aspect-ratio: 4 / 5; /* 🔸 يجعل البطاقة مستطيلة على الهاتف */
+  }
+
+  .portfolio-card img {
+    height: 45%;
+  }
+
+  .portfolio-card-content {
+    padding: 8px;
+  }
+
+  .portfolio-card h3 {
+    font-size: 1rem;
+  }
+
+  .portfolio-card p {
+    font-size: 0.75rem;
+  }
+
+  /* ===== Contact ===== */
+  .form-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 220px;
+  }
+
+  input, textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .send-btn {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
+
+  /* ===== Navbar الهاتفية ===== */
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    z-index: 9999;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  nav li {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+/* 🔹 الهواتف الصغيرة جدًا (أقل من 480px) */
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-card {
+    max-width: 90%;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .skills img {
+    width: 80px;
+    height: 85px;
+  }
+
+  .card {
+    border-radius: 15px;
+  }
+}
